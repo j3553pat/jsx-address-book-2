@@ -27,7 +27,6 @@ function ProfileInfo(props) {
             email: {email}
         </p>
           </Card.Text>
- 
         </Card.Body>
       </Card>
     )

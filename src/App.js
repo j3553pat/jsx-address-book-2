@@ -38,8 +38,8 @@ class App extends Component {
              email={profile.email}
              gender={profile.gender}
              showDetails={this.state.showDetails}
-             visibleInfo={this.visibleInfo(index)}
-             clickedIndex={this.state.clickedIndex}
+            //  visibleInfo={this.visibleInfo(index)}
+            //  clickedIndex={this.state.clickedIndex}
              />
           )
         })}</div>
