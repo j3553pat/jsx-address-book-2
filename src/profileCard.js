@@ -1,9 +1,10 @@
 import React from "react";
+import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 
 function ProfileInfo(props) {
-    const {firstName, lastName, age, dob, pic, cell, email, gender, showDetails} = props
+    const {firstName, lastName, age, dob, pic, cell, email, gender, showDetails, visibleInfo} = props
     console.log(showDetails)
     return (
       <Card style={{ width: '25rem', backgroundColor:"#70b382",
@@ -15,6 +16,7 @@ function ProfileInfo(props) {
             {firstName} {lastName}
             </Card.Title>
           <Card.Text>
+        {showDetails && 
         <p>
             Gender: {gender}
           <br />
@@ -25,8 +27,9 @@ function ProfileInfo(props) {
             #: {cell}
           <br />
             email: {email}
-        </p>
+        </p> }
           </Card.Text>
+          {!showDetails ? <Button variant="primary" onClick={visibleInfo}>Show Details</Button>:<Button variant="primary" onClick={visibleInfo}>hide Details</Button> }
         </Card.Body>
       </Card>
     )

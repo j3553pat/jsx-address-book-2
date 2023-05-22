@@ -10,9 +10,13 @@ class App extends Component {
     this.state = {
       arrayOfProfile: [],
       showDetails: false,
-      clickedIndex: null
     };
   }
+
+  visibleInfo = () => {
+    this.setState({...this.state, showDetails:!this.state.showDetails})
+  }
+
   componentDidMount() {
     axios.get(Url)
     .then( res => {
@@ -38,8 +42,7 @@ class App extends Component {
              email={profile.email}
              gender={profile.gender}
              showDetails={this.state.showDetails}
-            //  visibleInfo={this.visibleInfo(index)}
-            //  clickedIndex={this.state.clickedIndex}
+             visibleInfo={this.visibleInfo}
              />
           )
         })}</div>
